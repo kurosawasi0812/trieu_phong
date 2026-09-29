@@ -74,7 +74,7 @@ const quizData = [
     q: 'Triệu Phong chính thức thuộc bản đồ nước Đại Việt từ năm nào?',
     options: ['1306', '1469', '1604'],
     answer: 0,
-    why: 'Bài nguồn lấy năm 1306 làm mốc khi hai châu Ô – Rý được sáp nhập vào Đại Việt.'
+    why: 'Năm 1306 khi hai châu Ô – Rý được sáp nhập vào Đại Việt.'
   },
   {
     q: 'Năm 1950, huyện Triệu Phong từ 14 xã được sáp nhập thành bao nhiêu xã lớn?',
