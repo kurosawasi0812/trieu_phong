@@ -80,22 +80,22 @@ const quizData = [
     q: 'Năm 1950, huyện Triệu Phong từ 14 xã được sáp nhập thành bao nhiêu xã lớn?',
     options: ['8 xã', '10 xã', '12 xã'],
     answer: 1,
-    why: 'Theo bài nguồn, năm 1950 thực hiện chủ trương sáp nhập 14 xã thành 10 xã lớn.'
+    why: 'Năm 1950, huyện Triệu Phong thực hiện chủ trương sáp nhập 14 xã thành 10 xã lớn.'
   },
   {
-    q: 'Theo bài nguồn, phần lớn người Kinh ở Triệu Phong có nguồn gốc di cư từ đâu?',
+    q: 'Phần lớn người Kinh ở Triệu Phong có nguồn gốc di cư từ đâu?',
     options: ['Thanh – Nghệ – Tĩnh', 'Đồng bằng sông Hồng', 'Nam Trung Bộ'],
     answer: 0,
-    why: 'Bài viết cho biết phần lớn nguồn gốc được các gia phả ghi nhận là từ Thanh – Nghệ – Tĩnh.'
+    why: 'Phần lớn nguồn gốc được các gia phả ghi nhận là từ Thanh – Nghệ – Tĩnh.'
   },
   {
     q: 'Ai được bài nguồn giới thiệu là người làm lịch âm dương Hiệp kỷ?',
     options: ['Lương Văn Quán', 'Nguyễn Văn Tú', 'Nguyễn Hữu Thận'],
     answer: 2,
-    why: 'Nguyễn Hữu Thận, người làng Đại Hào, được bài nguồn giới thiệu với đóng góp về thiên văn và lịch pháp.'
+    why: 'Nguyễn Hữu Thận, người làng Đại Hào, với đóng góp về thiên văn và lịch pháp.'
   },
   {
-    q: 'Câu đối nào được bài nguồn dẫn lại ở Cổ Thành?',
+    q: 'Câu đối nào được được lưu lại ở Cổ Thành?',
     options: [
       'Triệu tạo nên xưa lưu nghiệp lớn, / Phong hanh vận mới mở hôm nay.',
       'Nước non ngàn dặm một lòng son. / Quê hương bốn biển một mái nhà.',
