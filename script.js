@@ -33,7 +33,6 @@ document.querySelectorAll('.reveal:not(.is-visible)').forEach((el) => revealObse
 
 const sections = [...document.querySelectorAll('main section[id]')];
 const navLinks = [...document.querySelectorAll('.main-nav a')];
-
 const navObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -49,6 +48,7 @@ const navObserver = new IntersectionObserver(
 sections.forEach((section) => navObserver.observe(section));
 
 const toTop = document.querySelector('#to-top');
+
 window.addEventListener(
   'scroll',
   () => {
@@ -61,7 +61,6 @@ toTop?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// Ảnh external: nếu nguồn ảnh chết/chặn hotlink, card vẫn giữ layout và nền fallback.
 document.querySelectorAll('.gallery-card img').forEach((img) => {
   img.addEventListener('error', () => {
     img.hidden = true;
@@ -71,38 +70,38 @@ document.querySelectorAll('.gallery-card img').forEach((img) => {
 
 const quizData = [
   {
-    q: 'Triệu Phong chính thức thuộc bản đồ nước Đại Việt từ năm nào?',
-    options: ['1306', '1469', '1604'],
-    answer: 0,
-    why: 'Năm 1306 khi hai châu Ô – Rý được sáp nhập vào Đại Việt.'
-  },
-  {
-    q: 'Năm 1950, huyện Triệu Phong từ 14 xã được sáp nhập thành bao nhiêu xã lớn?',
-    options: ['8 xã', '10 xã', '12 xã'],
+    q: 'Xã Triệu Phong chính thức đi vào hoạt động từ ngày nào?',
+    options: ['01/01/2025', '01/7/2025', '16/6/2025'],
     answer: 1,
-    why: 'Năm 1950, huyện Triệu Phong thực hiện chủ trương sáp nhập 14 xã thành 10 xã lớn.'
+    why: 'Xã Triệu Phong đi vào hoạt động từ ngày 01/7/2025.'
   },
   {
-    q: 'Phần lớn người Kinh ở Triệu Phong có nguồn gốc di cư từ đâu?',
-    options: ['Thanh – Nghệ – Tĩnh', 'Đồng bằng sông Hồng', 'Nam Trung Bộ'],
-    answer: 0,
-    why: 'Phần lớn nguồn gốc được các gia phả ghi nhận là từ Thanh – Nghệ – Tĩnh.'
-  },
-  {
-    q: 'Ai được bài nguồn giới thiệu là người làm lịch âm dương Hiệp kỷ?',
-    options: ['Lương Văn Quán', 'Nguyễn Văn Tú', 'Nguyễn Hữu Thận'],
-    answer: 2,
-    why: 'Nguyễn Hữu Thận, người làng Đại Hào, với đóng góp về thiên văn và lịch pháp.'
-  },
-  {
-    q: 'Câu đối nào được được lưu lại ở Cổ Thành?',
+    q: 'Xã Triệu Phong được thành lập trên cơ sở sáp nhập những đơn vị nào?',
     options: [
-      'Triệu tạo nên xưa lưu nghiệp lớn, / Phong hanh vận mới mở hôm nay.',
-      'Nước non ngàn dặm một lòng son. / Quê hương bốn biển một mái nhà.',
-      'Sông núi Việt Nam / muôn đời bền vững.'
+      'Triệu Thành, Triệu Thượng và thị trấn Ái Tử',
+      'Triệu Đông, Triệu Thành và Triệu Long',
+      'Triệu Thượng, Triệu Long và thị trấn Ái Tử'
     ],
     answer: 0,
-    why: 'Đây là bản dịch nghĩa của câu đối “Triệu tạo sơ cơ lưu vĩnh tích, / Phong hanh vận hội đáo kim lai.”'
+    why: 'Đơn vị mới được thành lập từ xã Triệu Thành, xã Triệu Thượng và thị trấn Ái Tử.'
+  },
+  {
+    q: 'Xã Triệu Phong có diện tích bao nhiêu?',
+    options: ['68,79 km²', '80,79 km²', '90,79 km²'],
+    answer: 1,
+    why: 'Diện tích của xã là 80,79 km².'
+  },
+  {
+    q: 'HĐND xã Triệu Phong có bao nhiêu đại biểu khóa I?',
+    options: ['67', '77', '87'],
+    answer: 1,
+    why: 'HĐND xã có 77 đại biểu khóa I, nhiệm kỳ 2021–2026.'
+  },
+  {
+    q: 'Xã Triệu Phong hiện có bao nhiêu thôn, khu phố?',
+    options: ['19', '29', '92'],
+    answer: 0,
+    why: 'Xã được thành lập với 19 thôn, khu phố.'
   }
 ];
 
@@ -119,9 +118,9 @@ const resultBox = document.querySelector('#quiz-result');
 
 function renderQuestion() {
   if (!quizBox || !progress || !nextBtn) return;
-
   selected = null;
   answered = false;
+
   const item = quizData[quizIndex];
 
   progress.textContent = `${String(quizIndex + 1).padStart(2, '0')} / ${quizData.length}`;
@@ -150,10 +149,12 @@ function renderQuestion() {
   quizBox.querySelectorAll('.quiz-option').forEach((btn) => {
     btn.addEventListener('click', () => {
       if (answered) return;
+
       quizBox.querySelectorAll('.quiz-option').forEach((b) => {
         b.classList.remove('selected');
         b.setAttribute('aria-pressed', 'false');
       });
+
       btn.classList.add('selected');
       btn.setAttribute('aria-pressed', 'true');
       selected = Number(btn.dataset.index);
@@ -185,6 +186,7 @@ nextBtn?.addEventListener('click', () => {
 
   const item = quizData[quizIndex];
   const correct = selected === item.answer;
+
   if (correct) quizScore++;
   answered = true;
 
@@ -206,10 +208,12 @@ nextBtn?.addEventListener('click', () => {
 
   const percent = Math.round((quizScore / quizData.length) * 100);
   progress.textContent = 'HOÀN TẤT';
+
   if (resultBox) {
     resultBox.classList.remove('hidden');
-    resultBox.innerHTML = `<strong>Điểm: ${quizScore} / ${quizData.length} (${percent}%)</strong><br>${percent >= 80 ? 'Bạn đã nắm khá chắc các mốc chính của bài.' : 'Hãy xem lại dòng thời gian và phần con người để nhớ sâu hơn.'}`;
+    resultBox.innerHTML = `<strong>Điểm: ${quizScore} / ${quizData.length} (${percent}%)</strong><br>${percent >= 80 ? 'Bạn đã nắm khá chắc những thông tin chính.' : 'Bạn có thể xem lại các phần tổng quan, tổ chức và phát triển để nhớ sâu hơn.'}`;
   }
+
   nextBtn.classList.add('hidden');
   restartBtn?.classList.remove('hidden');
 });
