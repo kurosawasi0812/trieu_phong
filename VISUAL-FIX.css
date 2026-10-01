@@ -1,9 +1,4 @@
-/* ============================================================
-   TRIỆU PHONG — VISUAL FIX
-   Dán phần này vào CUỐI style.css hiện tại.
-   ============================================================ */
 
-/* ----- 1. Các ô số liệu trong nền tối: chữ phải tương phản ----- */
 .section-dark .achievement-band > div {
   background: var(--paper);
   color: var(--ink);
@@ -17,13 +12,13 @@
   color: #5f6863;
 }
 
-/* Khoảng dòng tốt hơn cho số liệu dài */
+
 .section-dark .achievement-band strong {
   line-height: 1.05;
   letter-spacing: -0.012em;
 }
 
-/* ----- 2. Gallery: lớp phủ nhẹ hơn để hình và chữ cùng rõ ----- */
+
 .section-dark .gallery-card::after {
   background:
     linear-gradient(
@@ -42,7 +37,7 @@
   opacity: 0.94;
 }
 
-/* ----- 3. Chú thích ảnh: dễ đọc nhưng không quá lớn ----- */
+
 .section-dark .gallery-card figcaption {
   left: 24px;
   right: 24px;
@@ -56,26 +51,8 @@
   text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
 }
 
-/* ----- 4. Ảnh lỗi: không để alt text thô nổi trên nền ----- */
-.gallery-card img[hidden] {
-  display: none !important;
-}
 
-.gallery-card.image-fallback::before {
-  content: "Hình ảnh đang được cập nhật";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  color: #e9eee9;
-  text-align: center;
-  font-size: 0.9rem;
-  letter-spacing: 0.04em;
-}
 
-/* ----- 5. Mobile: số liệu và gallery rõ hơn ----- */
 @media (max-width: 720px) {
   .section-dark .achievement-band > div {
     padding: 22px 20px;
