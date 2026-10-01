@@ -719,7 +719,7 @@ a:focus-visible {
 
 .section-dark {
   background: var(--paper);
-  color: #fff;
+ 
 }
 
 .gallery-grid {
