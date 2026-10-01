@@ -1,0 +1,102 @@
+/* ============================================================
+   TRIỆU PHONG — VISUAL FIX
+   Dán phần này vào CUỐI style.css hiện tại.
+   ============================================================ */
+
+/* ----- 1. Các ô số liệu trong nền tối: chữ phải tương phản ----- */
+.section-dark .achievement-band > div {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.section-dark .achievement-band strong {
+  color: var(--ink);
+}
+
+.section-dark .achievement-band span {
+  color: #5f6863;
+}
+
+/* Khoảng dòng tốt hơn cho số liệu dài */
+.section-dark .achievement-band strong {
+  line-height: 1.05;
+  letter-spacing: -0.012em;
+}
+
+/* ----- 2. Gallery: lớp phủ nhẹ hơn để hình và chữ cùng rõ ----- */
+.section-dark .gallery-card::after {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 18, 16, 0.04) 0%,
+      rgba(10, 18, 16, 0.18) 42%,
+      rgba(10, 18, 16, 0.86) 100%
+    );
+}
+
+.section-dark .gallery-card img {
+  opacity: 0.86;
+}
+
+.section-dark .gallery-card:hover img {
+  opacity: 0.94;
+}
+
+/* ----- 3. Chú thích ảnh: dễ đọc nhưng không quá lớn ----- */
+.section-dark .gallery-card figcaption {
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+}
+
+.section-dark .gallery-card figcaption h3 {
+  margin-top: 6px;
+  margin-bottom: 0;
+  color: #fffdf8;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+}
+
+/* ----- 4. Ảnh lỗi: không để alt text thô nổi trên nền ----- */
+.gallery-card img[hidden] {
+  display: none !important;
+}
+
+.gallery-card.image-fallback::before {
+  content: "Hình ảnh đang được cập nhật";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  color: #e9eee9;
+  text-align: center;
+  font-size: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+/* ----- 5. Mobile: số liệu và gallery rõ hơn ----- */
+@media (max-width: 720px) {
+  .section-dark .achievement-band > div {
+    padding: 22px 20px;
+  }
+
+  .section-dark .achievement-band strong {
+    font-size: 1.75rem;
+  }
+
+  .section-dark .gallery-card,
+  .section-dark .gallery-card.gallery-wide {
+    min-height: 420px;
+  }
+
+  .section-dark .gallery-card figcaption {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .section-dark .gallery-card h3 {
+    font-size: 1.65rem;
+  }
+}
