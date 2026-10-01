@@ -1,5 +1,0 @@
-index.html  = nội dung + cấu trúc trang
-style.css   = font local + layout + responsive + timeline + quiz UI
-script.js   = menu mobile + scroll reveal + active nav + quiz + ảnh fallback
-font/       = font WOFF2 nhúng trực tiếp
-README.md   = hướng dẫn + changelog các lỗi đã sửa
