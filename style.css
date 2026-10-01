@@ -718,7 +718,7 @@ a:focus-visible {
 }
 
 .section-dark {
-  background: var(--paper);
+  background: var(--);
   color: #14221f;
  
 }
